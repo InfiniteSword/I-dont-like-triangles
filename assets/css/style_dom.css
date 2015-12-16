@@ -1,0 +1,406 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+p{
+    margin: 0;
+}
+.game-start{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*margin-left: 100%;*/
+    background: url("../img/shattered.png");
+    transition: margin 1s;
+    overflow: hidden;
+}
+.game-body{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: 100%;
+    background: #ffffff;
+    transition: margin 1s;
+}
+
+a{
+    text-decoration: none;
+}
+
+.triangles{
+    display: block;
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+}
+.game-title{
+    font-size: 2rem;
+    text-align: center;
+    color: #666;
+    margin-top: 7.5rem;
+}
+.introduce{
+    position: fixed;
+    background: rgba(85,85,85,.8);
+    width: 0;
+    height: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+    transition: width .5s, height .5s;
+    overflow: hidden;
+    color: #ffffff;
+}
+.intr-words{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 1rem;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+.intr-words p{
+    line-height: 1.8;
+}
+.intr-words .game-stt{
+    margin-top: 100px;
+}
+.intr-back{
+    font-size: 28px;
+    display: inline-block;
+    color: #ddd;
+    margin-right: 100px;
+}
+.center-words{
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    padding-top: -80px;
+    box-sizing: border-box;
+    line-height: 60px;
+    color: #888888;
+}
+.game-stt{
+    font-size: 28px;
+    display: inline-block;
+    color: inherit;
+}
+.game-intr{
+    font-size: 28px;
+    display: block;
+    color: inherit;
+}
+
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* game */
+.graphical-container{
+    width: 100%;
+    height: 100vh;
+}
+.game-triangles{
+    display: block;
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    cursor: pointer;
+    -webkit-animation: rotate 5s linear infinite;
+    -moz-animation: rotate 5s linear infinite;
+    animation: rotate 5s linear infinite;
+}
+.game-squares{
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+    z-index: 100;
+    -webkit-animation: rotate 5s linear infinite;
+    -moz-animation: rotate 5s linear infinite;
+    animation: rotate 5s linear infinite;
+}
+.game-top{
+    position: absolute;
+    width: 100%;
+    /*height: 36px;*/
+    background: #666;
+    color: #ffffff;
+    line-height: 36px;
+    top: 0;
+    z-index: 100000;
+}
+.score-ctn{
+    margin-left: 10px;
+    float: left;
+}
+.life-ctn{
+    float: right;
+    margin-right: 10px;
+}
+
+.game-stars{
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: url("../img/star.png");
+    background-size: 100% 100%;
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    cursor: pointer;
+    -webkit-animation: rotate 5s linear infinite;
+    -moz-animation: rotate 5s linear infinite;
+    animation: rotate 5s linear infinite;
+}
+
+
+.game-over{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: 200%;
+    background: #ffffff;
+    transition: margin 1s;
+}
+.game-over-words{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    color: #888;
+    font-size: 28px;
+    z-index: 999;
+    box-sizing: border-box;
+}
+#over-score{
+    line-height: 1.5;
+    font-size: 50px;
+}
+
+
+.shake-hard {
+    display: inline-block;
+    transform-origin: center center;
+}
+
+.shake-freeze,
+.shake-constant.shake-constant--hover:hover,
+.shake-trigger:hover .shake-constant.shake-constant--hover {
+    animation-play-state: paused;
+}
+
+.shake-freeze:hover,
+.shake-trigger:hover .shake-freeze, .shake-hard:hover,
+.shake-trigger:hover .shake-hard {
+    animation-play-state: running;
+}
+
+@keyframes shake-hard {
+    2% {
+        transform: translate(10px, 9px) rotate(2.5deg); }
+    4% {
+        transform: translate(-3px, 7px) rotate(0.5deg); }
+    6% {
+        transform: translate(5px, -5px) rotate(-2.5deg); }
+    8% {
+        transform: translate(-2px, -9px) rotate(3.5deg); }
+    10% {
+        transform: translate(-1px, 1px) rotate(-1.5deg); }
+    12% {
+        transform: translate(10px, -6px) rotate(3.5deg); }
+    14% {
+        transform: translate(1px, -1px) rotate(0.5deg); }
+    16% {
+        transform: translate(1px, -3px) rotate(1.5deg); }
+    18% {
+        transform: translate(9px, 5px) rotate(-1.5deg); }
+    20% {
+        transform: translate(-3px, 0px) rotate(0.5deg); }
+    22% {
+        transform: translate(-3px, -8px) rotate(-0.5deg); }
+    24% {
+        transform: translate(1px, 1px) rotate(2.5deg); }
+    26% {
+        transform: translate(0px, -5px) rotate(0.5deg); }
+    28% {
+        transform: translate(-7px, -1px) rotate(-0.5deg); }
+    30% {
+        transform: translate(9px, -9px) rotate(-1.5deg); }
+    32% {
+        transform: translate(-5px, -7px) rotate(-0.5deg); }
+    34% {
+        transform: translate(9px, 4px) rotate(1.5deg); }
+    36% {
+        transform: translate(1px, -1px) rotate(-1.5deg); }
+    38% {
+        transform: translate(0px, -1px) rotate(-0.5deg); }
+    40% {
+        transform: translate(-8px, -7px) rotate(2.5deg); }
+    42% {
+        transform: translate(-6px, -1px) rotate(-1.5deg); }
+    44% {
+        transform: translate(-6px, -4px) rotate(3.5deg); }
+    46% {
+        transform: translate(-9px, 3px) rotate(1.5deg); }
+    48% {
+        transform: translate(-7px, 6px) rotate(3.5deg); }
+    50% {
+        transform: translate(1px, 7px) rotate(3.5deg); }
+    52% {
+        transform: translate(-4px, 1px) rotate(1.5deg); }
+    54% {
+        transform: translate(7px, -2px) rotate(-0.5deg); }
+    56% {
+        transform: translate(3px, -8px) rotate(-2.5deg); }
+    58% {
+        transform: translate(4px, 0px) rotate(-1.5deg); }
+    60% {
+        transform: translate(1px, 10px) rotate(-2.5deg); }
+    62% {
+        transform: translate(-9px, -1px) rotate(-2.5deg); }
+    64% {
+        transform: translate(-9px, 3px) rotate(-2.5deg); }
+    66% {
+        transform: translate(-6px, 3px) rotate(-1.5deg); }
+    68% {
+        transform: translate(-8px, 10px) rotate(-2.5deg); }
+    70% {
+        transform: translate(-8px, -1px) rotate(2.5deg); }
+    72% {
+        transform: translate(10px, 3px) rotate(0.5deg); }
+    74% {
+        transform: translate(2px, 9px) rotate(1.5deg); }
+    76% {
+        transform: translate(-2px, -2px) rotate(1.5deg); }
+    78% {
+        transform: translate(-6px, 9px) rotate(1.5deg); }
+    80% {
+        transform: translate(-3px, 3px) rotate(3.5deg); }
+    82% {
+        transform: translate(10px, -8px) rotate(0.5deg); }
+    84% {
+        transform: translate(-5px, -3px) rotate(3.5deg); }
+    86% {
+        transform: translate(10px, -3px) rotate(1.5deg); }
+    88% {
+        transform: translate(3px, 6px) rotate(3.5deg); }
+    90% {
+        transform: translate(4px, 4px) rotate(-0.5deg); }
+    92% {
+        transform: translate(3px, 1px) rotate(0.5deg); }
+    94% {
+        transform: translate(8px, 0px) rotate(3.5deg); }
+    96% {
+        transform: translate(6px, -2px) rotate(0.5deg); }
+    98% {
+        transform: translate(-7px, 0px) rotate(-1.5deg); }
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg); } }
+
+.shake-hard:hover,
+.shake-trigger:hover .shake-hard,
+.shake-hard.shake-freeze,
+.shake-hard.shake-constant {
+    animation: shake-hard 100ms ease-in-out infinite;
+}
+

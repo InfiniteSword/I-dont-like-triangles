@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>“我不喜欢三角形”</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="assets/css/style_dom.css"/>
+
+</head>
+<body>
+
+<div class="game-start">
+    <h1 class="game-title">“我不喜欢三角形”</h1>
+    <div class="center-words">
+        <a href="#" class="game-stt">开始游戏</a>
+        <a href="#" class="game-intr">游戏说明</a>
+    </div>
+    <div class="introduce">
+        <div class="intr-words">
+            <p>小月听说市里新开了一家彩纸店，这家店只做三种彩纸，正方形、三角形和五角星。</p>
+            <p>小月走进这家店，对店主说：“姐姐，我要很多的彩纸，但是我不喜欢三角形的！”</p>
+            <p>你是这家店的店主，只有你会控制这个彩纸机器。</p>
+            <p>听了小月的要求，你果断地答应了，因为小月长得太可爱了！</p>
+            <p>提示：点击三角形将它从机器的制造队列中取消，点了正方形或者五角星小月会不高兴！</p>
+            <a href="#" class="intr-back">返回</a>
+            <a href="#" class="game-stt">开始游戏</a>
+        </div>
+    </div>
+</div>
+
+<div class="game-body shake-freeze">
+    <div class="game-top">
+        <p class="score-ctn">小月的好感度：<span id="score">0</span></p>
+        <p class="life-ctn">你剩下的失误机会：<span id="life">10</span></p>
+    </div>
+    <div class="graphical-container">
+
+    </div>
+</div>
+
+<div class="game-over">
+    <div class="game-over-words">
+        <p>游戏结束，小月的好感度:</p>
+        <p id="over-score"></p>
+        <p>小月：<span id="over-words"></span></p>
+    </div>
+</div>
+
+<script src="assets/js/game_dom.js"></script>
+<script src="assets/js/triangle.js"></script>
+</body>
+</html>
